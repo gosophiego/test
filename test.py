@@ -6,28 +6,28 @@
 ###############################################################################
 # Imports  # there will only be two imports added here.
 
+import string
 
 ###############################################################################
 # Write f01 that prints "Hello World!" and calls f02. (three lines)
 def f01():
-
+    print ('Hello World!')
     f02()
-
 
 ###############################################################################
 # Write f02 that sets the variables x, y, and z equal to the words
 # necessary to have the f03 print "i love python!" (five lines)
-
-
-
-
-    f03(x, y, z)  # Last line in f2()
+def f02():
+    x = 'i '
+    y = 'love '
+    z = 'python'
+    f03(x, y, z) # Last line in f2()
 
 
 ###############################################################################
 # Finish f03 (replace the ????).
 def f03(*words):
-    truth = " ".????(words)  # This is broken.
+    truth = " ".join(words)  # This is broken.
     truth_emphasized = truth + "!"
     print(truth_emphasized)
     f04(truth)  # Last line in f03()
@@ -37,8 +37,8 @@ def f03(*words):
 # Write f04 that prints truth backwards (edit one line only)
 # Ex. f4("Littlest Bear") prints "raeB tselttiL"
 def f04(string):
-
-    f05(string)  # Last line in f04()
+    print (string[::-1])
+    f05(string)
 
 
 ###############################################################################
@@ -51,11 +51,9 @@ def f04(string):
 #   Info
 #    Info
 def f05(word):
-
-
-
-
-
+    length = len(word)
+    for n in range(0, length-1):
+        print (' '*n, word)
     f06("South Hall", "Python Rocks!")  # Last line in f05()
 
 
@@ -71,12 +69,24 @@ def f05(word):
 # 'longer_string' is longer than 'short_string' by 1 chars
 # 'short_string' has only 92.31% the number of chars of longer_string
 def f06(string1, string2):
+    # (1)
+    len1 = len(string1)
+    len2 = len(string2)
+    if len1 > len2:
+        print_first = string1
+        print_second = string2
+        x = int(len1 - len2)
+        perc = float(len2/len1 * 100)
+    else:
+        print_first = string2
+        print_second = string1
+        x = int(len2 > len1)
+        perc = float(len1/len2 * 100)
+    print (print_first, ' is longer than ', print_second, ' by', x, ' chars')
 
-
-
-
-
-
+    # (2)
+    # not sure how to print only two decimal points
+    print (print_second, ' has only ', perc, '% the number of chars of ', print_first)
 
     various_solutions()  # Last line in f06()
 
@@ -113,7 +123,12 @@ def various_solutions():
 
 ###############################################################################
 def f07():
-    ...
+    '''return sum of all the multiples of 3 or 5, using a while loop'''
+    total = 0
+    while n in range (:):
+        if n%3 == 0 or n%5 ==0:
+            total += n
+    return total
 
 
 ###############################################################################
@@ -164,6 +179,7 @@ def f12():
 ###############################################################################
 # Fix the error in f13:
 def f13():
+    pass
     for each in "string"
         print(each)
     f14()  # Last line in f13()
@@ -175,7 +191,7 @@ def f13():
 # Please do so at the top of the file.
 # Ex. /Users/dsg/pbc_2016/test/test_danielsgriffin.py
 def f14():
-
+    pass
 
     f15()  # Last line in f14()
 
@@ -195,6 +211,7 @@ def f14():
 # [[], [], [], [], [], [], [], [], [0], []]
 # [[], [], [], [], [], [], [], [], [], [0]]
 def f15():
+    pass
 
 
 
@@ -210,6 +227,7 @@ def f15():
 # Ex.
 # [1,2,3] and [4,5,6] would produce [(1, 4), (2, 5), (3, 6)]
 def f16(list1, list2):
+    pass
 
 
 
@@ -224,6 +242,7 @@ def f16(list1, list2):
 # with the index of the word in that line and the word, sharing tuples.
 # Ex. [(0, 'To'), (1, 'be'), (2, 'or'), (3, 'not'), (4, 'to'), (5, 'be')]
 def f17():
+    pass
 
 
 
@@ -239,6 +258,7 @@ def f17():
 # Print the dictionary.
 # Call the dictionary in f19()
 def f18(list_):
+    pass
 
 
 
@@ -252,6 +272,7 @@ def f18(list_):
 # would be even), otherwise change the value to the ascii number for the last
 # char in the word. Print the new dictionary.
 def f19(d):
+    pass
     
 
 
@@ -282,7 +303,7 @@ def f21(word):
 # Ex. second print:
 # ['PYTHON!', ['Other1', 'Other_2']]
 def f22():
-
+    pass
 
 
 
@@ -324,7 +345,8 @@ def f23(lists_):
 # Write main() that calls f01, then prints the The Zen of Python, by Tim Peters.
 # (three lines)
 def main():
-    ...
+    f01()
+    import this
 
 
 
@@ -332,5 +354,7 @@ def main():
 
 
 # Write the boilerplate code. (two lines, plus empty line at end)
+if __name__ == "__main__":
+    main()
 
 
